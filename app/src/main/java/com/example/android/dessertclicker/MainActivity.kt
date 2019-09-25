@@ -18,6 +18,7 @@ package com.example.android.dessertclicker
 
 import android.content.ActivityNotFoundException
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -171,6 +172,11 @@ class MainActivity : AppCompatActivity() {
         super.onStop()
 //        dessertTimer.stopTimer()
         Timber.i("onStop Called")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        Timber.i("onSaveInstanceState Called")
     }
 
     override fun onDestroy() {
